@@ -3,10 +3,6 @@ body {
   color: white;
 }
 
-.app {
-
-}
-
 .list-containter {
   display: flex;
   flex-direction: row;
@@ -25,10 +21,6 @@ body {
 
 .list-item {
   margin-left: 15px;
-}
-
-.list-item:hover {
-  border:2px solid white;
 }
 
 button {
