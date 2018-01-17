@@ -27,33 +27,20 @@ body {
   margin-left: 15px;
 }
 
+.list-item:hover {
+  border:2px solid white;
+}
+
 button {
   margin-left: 10px;
 }
 
-.mylist-hovered-1 {
+.hovered {
   display: inline-block;
 }
 
-.mylist-hovered-2 {
-  display: inline-block;
-}
-
-.mylist-hovered-3 {
-  display: inline-block;
-}
-
-/*.mylist-unhovered-1 {
+.unhovered {
   display: none;
 }
-
-.mylist-unhovered-2 {
-  display: none;
-}
-
-.mylist-unhovered-3 {
-  display: none;
-}*/
-
 
 
