@@ -1,16 +1,16 @@
 import React from 'react';
-import MyListItem from './MyListItem';
+import ListItem from './ListItem';
 
-var MyList = ({mylist, handleHover, btnClass, handleRemove}) => (
+var List = ({list, btnClass, handleRemove, handleAdd}) => (
   <div className='list-containter'>
-    {mylist.map((myListItem,index) =>
-      <MyListItem
+    {list.map((myListItem,index) =>
+      <ListItem
         key={myListItem.id}
         index={index}
         myListItem={myListItem}
-        handleHover={handleHover}
         btnClass={btnClass}
         handleRemove={handleRemove}
+        handleAdd={handleAdd}
       />
     )}
   </div>
@@ -20,4 +20,4 @@ var MyList = ({mylist, handleHover, btnClass, handleRemove}) => (
 //   mylist: React.PropTypes.array.isRequired
 // };
 
-export default MyList;
+export default List;

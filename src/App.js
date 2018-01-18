@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import data from './data';
-import MyList from './components/MyList';
-import RecomList from './components/RecomList';
+import List from './components/List';
+
 
 
 class App extends Component {
@@ -31,8 +31,11 @@ class App extends Component {
     this.setState({recom: myNewRecom});
   }
 
-  handleRemove(index){
-    console.log('index',index)
+  handleRemove(item,index){
+    let myNewRecom = this.state.recom.slice();
+    myNewRecom.push(item);
+    this.setState({recom: myNewRecom});
+
     let myNewList = this.state.mylist.slice();
     myNewList.splice(index,1);
     this.setState({mylist: myNewList});
@@ -44,15 +47,15 @@ class App extends Component {
       <div className="App">
         <section className='main-row'>
           <div className='row-title'>My List</div>
-          <MyList mylist={this.state.mylist}
-                  handleRemove={this.handleRemove}
+          <List list={this.state.mylist}
+                handleRemove={this.handleRemove}
           />
         </section>
 
         <section className='main-row'>
           <div className='row-title'>Recommendations</div>
-          <RecomList recomlist={this.state.recom}
-                     handleAdd={this.handleAdd}
+          <List list={this.state.recom}
+                handleAdd={this.handleAdd}
           />
         </section>
       </div>
