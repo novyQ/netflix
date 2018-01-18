@@ -3,11 +3,11 @@ import ListItem from './ListItem';
 
 var List = ({list, btnClass, handleRemove, handleAdd}) => (
   <div className='list-containter'>
-    {list.map((myListItem,index) =>
+    {list.map((item,index) =>
       <ListItem
-        key={myListItem.id}
+        key={item.id}
         index={index}
-        myListItem={myListItem}
+        item={item}
         btnClass={btnClass}
         handleRemove={handleRemove}
         handleAdd={handleAdd}

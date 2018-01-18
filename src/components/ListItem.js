@@ -3,24 +3,12 @@ import React, {Component} from 'react';
 class ListItem extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      isHovered: false
-    };
-
-    this.handleHover = this.handleHover.bind(this);
   }
 
-  handleHover(){
-    this.setState({
-      isHovered: !this.state.isHovered
-    })
-  }
 
   render(){
-    let btnClass = this.state.isHovered ? 'hovered':'unhovered';
 
-    let { myListItem, index, handleRemove, handleAdd } = this.props;
+    let { item, index, handleRemove, handleAdd } = this.props;
 
     var toggleBtn = function(){
       if(handleAdd){
@@ -32,28 +20,29 @@ class ListItem extends Component {
 
     var click = function(){
       if(!handleAdd){
-        handleRemove(myListItem,index);
+        handleRemove(item,index);
       }else{
-        handleAdd(myListItem,index);
+        handleAdd(item,index);
       }
     }
 
     return(
-      <div className="list-item"
-           onMouseEnter={this.handleHover}
-           onMouseLeave={this.handleHover}
-      >
-        <div>
-          <img className="img"
-               src={myListItem.img}
+      <div className="item-container">
+        <img className="img"
+               src={item.img}
                alt=""
-          />
+        />
+        <div className="overlay">
+          <div className="overlay-text">
+            <div className="item-title">
+              {item.title}
+            </div>
+            <div>
+              <button className={toggleBtn()} onClick={click}>{toggleBtn()}</button>
+            </div>
+          </div>
         </div>
-        <div className={"item-title "+btnClass}>
-          {myListItem.title}
-          <button className={btnClass} onClick={click}>{toggleBtn()}</button>
-        </div>
-  </div>
+      </div>
     )
   }
 }

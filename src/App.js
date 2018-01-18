@@ -47,16 +47,12 @@ class App extends Component {
       <div className="App">
         <section className='main-row'>
           <div className='row-title'>My List</div>
-          <List list={this.state.mylist}
-                handleRemove={this.handleRemove}
-          />
+          <List list={this.state.mylist} handleRemove={this.handleRemove} />
         </section>
 
         <section className='main-row'>
-          <div className='row-title'>Recommendations</div>
-          <List list={this.state.recom}
-                handleAdd={this.handleAdd}
-          />
+          <div className='row-title'>Our Recommendations</div>
+          <List list={this.state.recom} handleAdd={this.handleAdd} />
         </section>
       </div>
     );
