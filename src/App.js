@@ -46,7 +46,7 @@ class App extends Component {
     return (
       <div className="App">
         <section className='main-row'>
-          <div className='row-title'>My List</div>
+          <div className='row-title'>Your List</div>
           <List list={this.state.mylist} handleRemove={this.handleRemove} />
         </section>
 
